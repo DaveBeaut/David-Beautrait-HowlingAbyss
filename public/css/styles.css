@@ -1,0 +1,820 @@
+/*********************** FONTS *************************/
+
+  @font-face {
+    font-family: 'dogicaregular';
+    src: url('../fonts/dogica-webfont.woff2') format('woff2'),
+      url('../fonts/dogica-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'dogicabold';
+    src: url('../fonts/dogicabold-webfont.woff2') format('woff2'),
+      url('../fonts/dogicabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'dogica_pixelregular';
+    src: url('../fonts/dogicapixel-webfont.woff2') format('woff2'),
+      url('../fonts/dogicapixel-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'dogica_pixelbold';
+    src: url('../fonts/dogicapixelbold-webfont.woff2') format('woff2'),
+      url('../fonts/dogicapixelbold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+/*************** RESET *****************/
+  ul, ol {
+    list-style: none;
+  }
+  
+  * {
+    /* box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.199) inset; */
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  input {
+    border-style: none;
+    border-width: 0;
+  }
+  
+  input:focus{
+    outline: none; 
+  }
+  
+  html {
+    background: url('../images/bluredbackground.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  body {
+
+    height: 100vh;
+  }
+
+  main {
+    height: 100%;
+  }
+
+  .fill {
+    height: 50vh ;
+  }
+/************** FIN DU RESET ***************/
+  
+/******************************** HEADER ***********************************/
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 32px 10px 12px;
+    background-color: #283859e5;
+    color: #97FFFE;
+  }
+  
+  header img {
+    width: 70px;
+    height: 60px;
+    float: left;
+    transform: scaleX(-1);
+  }
+  
+  #logoporo {
+    display: flex;
+    align-items: center;
+  }
+  
+  header p {
+    margin-left: 1vw;
+    font-size: 0.8em;
+    font-family: 'dogicaregular', Arial, Helvetica, sans-serif;
+    line-height: 16px;
+  }
+  
+  header input.loginBtn {
+    font-size: 1em;
+    padding: 10px 20px;
+    font-family: 'dogica_pixelregular', Arial, Helvetica, sans-serif;
+    background-color: #97FFFE;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    vertical-align: baseline;
+  }
+  
+  .registerBtn {
+    margin-top: 20px;
+    font-size: 1em;
+    padding: 10px 20px;
+    font-family: 'dogica_pixelregular', Arial, Helvetica, sans-serif;
+    background-color: #97FFFE;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  }
+
+  #logoutBtn {
+    background: none;
+    color: #F55F5F;
+    font-family: 'dogica_pixelregular', Arial, Helvetica, sans-serif;
+    border: none;
+    cursor: pointer;
+  }
+
+  #logoutBtn:hover{
+    color: #d62020;
+  }
+
+  #userAndLogout {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  #userTag {
+    font-family: 'dogica_pixelregular', Arial, Helvetica, sans-serif;
+    margin-bottom: 4px;
+  }
+  
+/********** MODAL LOGIN **********/
+  
+  /* Style de la boîte modale */
+  .modal {
+    display: flex;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0px;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(68, 110, 166, 0.9);
+  }
+  
+  /* Style du contenu de la boîte modale */
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 12%;
+    padding: 24px;
+    background-color: #446EA6;
+    min-width: 320px;
+    width: 30%;
+    border-radius: 5px;
+    position: relative;
+    font-family: 'dogica_pixelregular', Arial, Helvetica, sans-serif;
+  }
+  
+  .modal-input {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-input label {
+    margin-top: 24px;
+    margin-bottom: 4px;
+  }
+  
+  .modal-input input{
+    width: 100%;
+    height: 5vh;
+    text-indent: 20px;
+    font-family: 'dogica_pixelregular';
+    color: rgba(128, 128, 128, 0.655);
+  }
+  
+  .modal-input #email {
+    font-family: 'dogica_pixelregular';
+    color: rgba(128, 128, 128, 0.655);
+  }
+  
+  /* Style de la croix pour fermer la boîte modale */
+  .close { 
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Style flou en arrière-plan */
+  .modal:before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+  
+  .modal form {
+    width: 80%;
+  }
+  
+  #loginmodal {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #noaccountporo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #noaccountporo p {
+    color: #f0e34a;
+  }
+
+  #noaccountporo img {
+    transform: scaleZ(-1);
+    -webkit-transform: scaleZ(-1);
+    -moz-transform: scaleZ(-1);
+    -ms-transform: scaleZ(-1);
+    -o-transform: scaleZ(-1);
+  }
+
+  .registerLink {
+    background: none;
+    color: #f0e34a;
+    font-size: 0.8em;
+    font-family: 'dogicaregular', Arial, Helvetica, sans-serif;
+    border-bottom: #f0e34a dashed 2px;
+    cursor: pointer;
+  }
+
+  .registerLink:hover {
+    color: #dfa01a;
+    border-bottom: #dfa01a dashed 2px;
+  }
+
+  .username:hover{
+    color: #f0e34a;
+  }
+
+/******** FIN HEADER ******/
+  
+/****************************** MAIN ***********************************/
+  
+/********************** HOMEPAGE **********************/
+
+  #homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #homepage h1 {
+    text-align: center;
+    color: white;
+    font-family: 'dogica_pixelbold';
+    font-size: 5vw;
+    
+  }
+  
+  #homepage input {
+    height: 7vh;
+    width: 100%;
+  }
+
+  #logoSearch {
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+  }
+  
+  #championList {
+    max-height: 90px;
+  }
+  
+  .championDiv {
+    background: white;
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+    height: 7vh;
+  }
+  
+  .championImage {
+    width: 35px;
+    height: 35px;
+    margin: 0px 8px 0px 3px;
+  }
+  
+  #search {
+    text-indent: 20px;
+    font-family: 'dogica_pixelregular', Arial, Helvetica, sans-serif;
+  }
+
+
+  
+
+/********************** FIN HOMEPAGE ********************/
+
+/********************** 404 **********************/
+
+  #page404 h1 {
+    text-align: center;
+    margin-top: 29vh;
+    color: white;
+    font-family: 'dogica_pixelbold';
+    font-size: 5vw;
+  }
+
+/********************** DETAIL CHAMPION **********************/
+
+  #detailPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #championName {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: 'dogicaregular';
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  #championImage {
+    display: block;
+    width: 20vh;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    border-radius: 50%;
+    border: 3px solid #97FFFE;
+    
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  /* Styles for the spells container */
+  #spells {
+      margin-bottom: 10px; 
+  }
+
+  .spell {
+      display: inline-block;
+  }
+
+  #spells div:last-child {
+    display: none;
+  }
+
+  #superieurA:last-child {
+    display: none;
+  }
+
+  #superieurA {
+    font-family: 'dogicaregular';
+    color: white;
+    font-size: larger;
+    font-size: 2.5em;
+    position: relative;
+    bottom: 12px;
+  }
+
+  #random-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; 
+  }
+
+  #random-items img {
+    width: 70px;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; 
+  }
+
+  .item img {
+    width: 100px; 
+    height: auto;
+  }
+
+  #detailPage p  span {
+    color: white;
+    font-family: 'dogica_pixelregular';
+    margin-bottom: 8px;
+  }
+
+/* rune image */
+
+  #runes img {
+      width: 30vh;
+      height: auto;
+  }
+  @media (min-width: 768px) {
+    .item {
+      width: calc(33.33% - 10px);
+    }
+    
+    .item:nth-child(3n+1) {
+      margin-right: 10px;
+    }
+    
+    .item:nth-child(3n+1):nth-last-child(-n+3) {
+      margin-bottom: 0;
+    }
+  }
+
+/********************** FIN DETAIL **********************/
+
+/********************** USERPAGE **********************/
+
+  #userPage {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #userPage p{
+    font-family: 'dogica_pixelregular', Arial, Helvetica, sans-serif;
+    color: white;
+  }
+
+
+  #history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 48px;
+    margin-top: 24px;
+  }
+
+  .game {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      width: 50vw;
+  }
+
+  .gameInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 10px;
+      margin-left: 16px;
+  }
+
+  .resultat {
+      font-weight: bold;
+      margin-bottom: 8px ;
+  }
+
+  .gameVictory {
+    background-color: #72B6F2;
+  }
+
+  .gameDefeat {
+    background-color: #F55F5F;
+  }
+
+  .championName {
+      margin: 0;
+  }
+
+  .championPortraitWrapper {
+      width: 80px;
+      height: 80px;
+  }
+
+  .championPortrait {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+  }
+
+  #yourHistory {
+    align-self: self-start;
+    font-weight: bold;
+    border-bottom: solid white 3px;
+    width: 30vw;
+    margin-bottom: 8px;
+  }
+
+  /* Game data form */
+
+  #game-data-form { 
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+  }
+
+  #game-data-form p { 
+    font-weight: bold;
+    border-bottom: solid white 3px;
+    width: 30vw;
+  }
+
+  #game-data-form select {
+    font-family: 'Helvetica';
+    padding: 10px 0px;
+    text-align: center;
+  }
+
+  #idchampion {
+    width: 100%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: none;
+  }
+
+  #game-data-form label.userIndication { /* Indications (écritures) */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'dogica_pixelregular';
+  }
+
+  #game-form-data select {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  select.equipement {
+    border-radius: 10px;
+    width: 49%;
+    margin-bottom: 16px;
+    border: none;
+  }
+
+  .slotRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  #sendFGT {
+    font-size: 14px;
+    color: #1e1f20;
+    font-weight: bold;
+    background-color: #f0e34a;
+    padding: 12px 30px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border-radius: 10px;
+    transition : 622ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    align-self: center;
+  }
+    
+  #sendFGT:hover {
+    transition : 622ms;
+    transform : translateY(-0px);
+    background-color: #fff;
+    color: #446ea6;
+    border: none;
+  }
+
+  /* Boutons poussoirs (defaite / victoire) */
+  #result-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  input[type="radio"].button {
+    display: none;
+  }
+  
+  input[type="radio"].button + label {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  /* Définition des couleurs des boutons */
+  #victoryButton {
+    color: #ffffff;
+    background-color: #72B6F2;
+  }
+  
+  #defeatButton {
+    color: #ffffff;
+    background-color: #F55F5F;
+  }
+  
+  /* Style pour le bouton VICTORY sélectionné */
+  input[type="radio"].button:checked + #victoryButton {
+    background-color: #f0e34a;
+    color: #1e1f20;
+  }
+  
+  /* Style pour le bouton DEFEAT sélectionné */
+  input[type="radio"].button:checked + #defeatButton {
+    background-color: #f0e34a;
+    color: #1e1f20;
+  }
+  
+/**********************FIN USERPAGE **********************/
+
+/************ LEGAL ***************/
+
+#legalPage {
+  background-color: #283859e5;
+  text-justify:distribute-all-lines;
+  font-family: Helvetica, sans-serif;
+  color: white;
+  width: 70%;
+  margin: 5vh;
+  padding: 16px;
+  height: max-content;
+}
+
+#legalPage h1 {
+  margin-bottom: 24px;
+}
+
+#legalPage h2 {
+  margin-bottom: 16px;
+}
+
+ #legalPage h3 {
+  margin-bottom: 16px;
+ }
+
+ #legalPage li {
+  margin-bottom: 16px;
+ }
+
+ #legalPage p {
+  margin-bottom: 16px;
+ }
+
+/********* ABOUT ************/
+
+  #aboutPage {
+    background-color: #283859e5;
+    text-justify:distribute-all-lines;
+    font-family: Helvetica, sans-serif;
+    color: white;
+    width: 50%;
+    margin: 21vh;
+    padding: 16px;
+    height: max-content;
+  }
+
+  #aboutPage p {
+    margin-bottom: 16px;
+  }
+
+  #aboutPage h1 {
+    margin-bottom: 16px;
+  }
+
+
+/********************** FOOTER **********************/
+  
+  footer{
+    background-color: #283859 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+    color: #97FFFE;
+    font-family: 'dogica_pixelregular', Arial, Helvetica, sans-serif;
+    height: 7vh;
+    margin-top: 100px;
+  }
+  
+  footer ul{
+    display: flex;
+  }
+  
+  footer ul li{
+    margin: 0px 24px;
+  }
+
+/********************** MEDIA QUERIES **********************/
+  
+  @media screen and (max-width: 375px) {
+    header p {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 540px) {
+    main input {
+      height: 7vh;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 750px) {
+    #userPage{
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .game{
+      width: 30vw;
+      margin-right: 15vh;
+    }
+
+    #game-data-form{
+      width: 30vw;
+    }
+
+  }
+
+  @media only screen and (max-width: 484px) {
+    .game {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .championPortrait {
+      width: 80px;
+      height: 80px; 
+      margin-top: 8px;
+    }
+    
+    .gameVictory {
+      padding-bottom: 9px;
+    }
+
+    .gameDefeat {
+      padding-bottom: 9px;
+    }
+
+    .resultat {
+      margin-top: 	8px;
+    }
+
+}
+
+@media (max-width: 768px) {
+  #random-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px; 
+  }
+}
