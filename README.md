@@ -67,4 +67,4 @@ Marche à suivre pour l'installation du projet :
  1) mail : test@test.fr pwd : test
  2) mail : test2@test.fr pwd : test2
 
-![Un Poro, mascotte de l'ARAM](https://zupimages.net/up/23/16/wd8w.png)Pour toute question, contactez-moi via GitHub, merci et à bientôt !
+![Un Poro, mascotte de l'ARAM](https://zupimages.net/up/23/16/wd8w.png) Pour toute question, contactez-moi via GitHub, merci et à bientôt !
