@@ -17,6 +17,7 @@ let registerModal = document.getElementById("registerModal");
 // Sélectionner la croix pour fermer la boîte modale d'inscription
 let registerClose = document.getElementById("registerClose");
 
+//--------------------//
 
 // LOGIN
 
@@ -28,7 +29,6 @@ loginBtn.addEventListener("click", function() {
 closeBtn.addEventListener("click", function() {
   loginModal.style.display = "none";
 });
-
 
 // REGISTER
 
@@ -50,6 +50,7 @@ window.addEventListener("click", function(event) {
     registerModal.style.display = "none";
   }
 });
+
 
 // Check la validité entre registerPassword et confirmPassword 
 function validateForm() {

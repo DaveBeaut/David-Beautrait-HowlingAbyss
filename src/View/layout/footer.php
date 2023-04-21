@@ -1,18 +1,20 @@
-        <!---------- FOOTER ---------->
-        
-        <footer class="footer">
+    <!-- HEADER -->
 
-            <ul>
-                <a href="index.php?action=about"><li>About</li></a>
-                <a href="index.php?action=legal"><li>Legal</li></a>
-            </ul>
+    <footer class="footer">
 
-        </footer>
+        <ul>
+            <li><a href="index.php?action=about">About</a></li>
+            <li><a href="index.php?action=legal">Legal</a></li>
+        </ul>
 
-        <!-- script de la boîte modale de login / register -->
-        <script src='public/js//login.js'></script>
-        <!-- script de la barre de recherche de champion -->
-        <script src='public/js//search.js'></script>
-        <script src='public/js//dbWReload.js'></script>
-    
+    </footer>
+
+    <!-- script de la boîte modale de login / register -->
+    <script src='public/js/login.js'></script>
+    <!-- script de la barre de recherche de champion -->
+    <script src='public/js/search.js'></script>
+    <!-- script pour envoi de gamedb sans reload -->
+    <script src='public/js/dbWReload.js'></script>
+    <!-- script de la boîte modale de modify profile-->
+    <script src='public/js/modifyModal.js'></script>
 </html>

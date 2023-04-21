@@ -2,14 +2,12 @@
 
 <?php include 'src/View/layout/header.php';?>
 
+    <main id="page404">
 
-        <!---------- MAIN ---------->
-        <main id="page404">
-
-            <div>
-                <h1>OOPSY :| ! 404</h1> 
-            </div>
-
-        </main>
+        <div>
+            <h1>OOPSY :| ! 404</h1> 
+        </div>
+        
+    </main>
         
 <?php include 'src/View/layout/footer.php';?>

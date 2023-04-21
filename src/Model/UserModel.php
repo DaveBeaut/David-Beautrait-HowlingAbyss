@@ -62,6 +62,33 @@
             return $query->fetchAll(PDO::FETCH_ASSOC);
         }
 
+        public function updateEmail(){
+
+            $query = $this->pdo->prepare(
+                "UPDATE utilisateurs 
+                SET email = :email 
+                WHERE idutilisateur = :userId"
+            );
+    
+            $query->bindParam(':email', $newEmail, PDO::PARAM_STR);
+            $query->bindParam(':userId', $userId, PDO::PARAM_INT);
+    
+            return $query->execute();
+        }
+
+        public function deleteUser($userId) {
+
+            $query = $this->pdo->prepare(
+                "DELETE FROM utilisateurs 
+                WHERE idutilisateur = :userId"
+            );
+
+            $query->bindParam(':userId', $userId, PDO::PARAM_INT);
+
+            return $query->execute();
+
+        }
+            
     }
 
 ?>

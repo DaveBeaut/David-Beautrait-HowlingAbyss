@@ -1,4 +1,5 @@
-<!--------- HEADER --------->
+<!-- HEADER -->
+
 <header>
 
     <div id="logoporo">
@@ -17,11 +18,45 @@
     <?php if (isset($_SESSION['username'])): ?>
 
         <div id="userAndLogout">
-            <a href="index.php?action=userPage" id="userTag"><span class="username"><?php echo($_SESSION['username']); ?></span></a>
+
+            <a href="index.php?action=userPage" id="userTag"><span class="username">
+                <?php echo($_SESSION['username']); ?></span></a>
             
-            <form action="index.php?action=logout" method="post">
-                <button type="submit" id="logoutBtn">logout</button>
-            </form>
+            <!-- WIP Modal servant à la modif et au delete d'un user -->
+            <!-- <div id="modifyLogout">
+
+                <div class="modal">
+
+                    <div class="modal-content">
+
+                        <span class="close">&times;</span>
+
+                        <h2>Your profile</h2>
+                        <p>Username : <span id="username"></span></p>
+                        <p>Actual mail : <span id="email"></span></p>
+
+                        <form id="updateEmailForm">
+                            <label for="newEmail">New e-mail</label>
+                            <input type="email" id="newEmail" name="newEmail">
+                            <button type="submit">Update</button>
+                        </form>
+
+                        <form id="deleteProfileForm">
+                            <button type="submit">delete my profile</button>
+                        </form>
+
+                    </div>
+                    
+                </div>
+
+                <input class="modifyBtn" type="button" value="modify"> -->
+
+                <form action="index.php?action=logout" method="post">
+                    <button type="submit" id="logoutBtn">logout</button>
+                </form>
+                
+            </div>
+
         </div>
 
         <?php else: ?>

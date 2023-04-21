@@ -1,7 +1,7 @@
 <?php include 'src/View/layout/head.php';?>
 
 <?php include 'src/View/layout/header.php';?>
-
+    
     <main id="legalPage">
 
         <h1>LEGAL</h1>
@@ -100,8 +100,6 @@
         <p>
             General Terms and Conditions applicable to Use of a Web Site.
         </p>
-
-
 
         <h2>
             Privacy Policy

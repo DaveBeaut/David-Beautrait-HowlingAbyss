@@ -2,6 +2,11 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/ [QSA,L]
+RewriteRule ^(src) - [R=403,L]
 
-ErrorDocument 404 /ABIMEHRULANTE/View/errors/404.php
-ErrorDocument 500 /ABIMEHRULANTE/View/errors/500.php
+<FilesMatch "(.env|.gitignore|vendor|composer.json|composer.lock|README.md)">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+ErrorDocument 404 /howlingabyss/View/errors/404.php

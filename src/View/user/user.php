@@ -12,7 +12,7 @@
             <?php foreach ($lastFiveGames as $game): ?>
 
                 <!-- Crée un élément "game" et lui ajoute une classe -->
-                <div class="game <?= ($game['resultatpartie'] == 'victoire') ? 'gameVictory' : 'gameDefeat' ?>">
+                <div class="game <?= ($game['resultatpartie'] == 'victory') ? 'gameVictory' : 'gameDefeat' ?>">
 
                     <!-- Résultat de la partie -->
                     <div class="gameInfo">
@@ -37,6 +37,7 @@
                         } else {
                             echo 'Portrait not loading';
                         }
+                        
                     ?>
 
                 </div>
@@ -79,11 +80,11 @@
 
             <div id="result-container">
                 
-                <input type="radio" name="resultatpartie" id="victory" value="victoire" class="button" required>
+                <input type="radio" name="resultatpartie" id="victory" value="victory" class="button" required>
                 <label for="victory" class="button" id="victoryButton">VICTORY</label>
 
                 
-                <input type="radio" name="resultatpartie" id="defeat" value="defaite" class="button">
+                <input type="radio" name="resultatpartie" id="defeat" value="defeat" class="button">
                 <label for="defeat" class="button" id="defeatButton">DEFEAT</label>
 
             </div>
@@ -154,8 +155,8 @@
             <button type="submit" id="sendFGT">SEND</button>
                         
         </form>
-        
+        <?php include 'src/View/layout/footer.php';?>
     </main>
     
-<?php include 'src/View/layout/footer.php';?>
+
 
