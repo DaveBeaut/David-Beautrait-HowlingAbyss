@@ -483,6 +483,7 @@
     align-items: center;
     flex-direction: column;
     margin-top: 24px;
+    margin-bottom: 150px;
   }
 
   #userPage p{

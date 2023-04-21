@@ -52,7 +52,7 @@
         <p id="register">REGISTER YOUR GAME :</p>  
 
             <!-- nom du champion joué -->
-            <label for="idchampion" class="userIndication">CHAMPION :</label><br>
+            <label for="idchampion" class="userIndication">CHAMPION :</label>
             
             <?php
 
@@ -76,7 +76,7 @@
             </select>
 
             <!-- boutons radio victoire / défaite -->
-            <label for="resultatpartie" class="userIndication">RESULT :</label><br>
+            <label for="resultatpartie" class="userIndication">RESULT :</label>
 
             <div id="result-container">
                 
@@ -98,9 +98,9 @@
 
                 // Génére les options pour la balise <select>
                 $options = '';
-                foreach ($itemsData['data'] as $itemId => $item) {
+                foreach ($itemsData['data'] as $itemName => $item) {
                     $itemName = ($item['name']);
-                    $options .= "<option value=\"$itemId\">$itemName</option>";
+                    $options .= "<option value=\"$itemName\">$itemName</option>";
                 }
                 
                 //check comment factoriser
@@ -117,7 +117,7 @@
                 </select>
 
                 <!-- Item 2 -->
-                <select name="equipement1" class="equipement">
+                <select name="equipement2" class="equipement">
                     <option value="">-- 2ND SLOT --</option>
                     <?php echo $options; ?>
                 </select>
@@ -125,13 +125,13 @@
             
             <div class="slotRow">
                 <!-- Item 3 -->
-                <select name="equipement1" class="equipement">
+                <select name="equipement3" class="equipement">
                     <option value="">-- 3RD SLOT --</option>
                     <?php echo $options; ?>
                 </select>
 
                 <!-- Item 4 -->
-                <select name="equipement1" class="equipement">
+                <select name="equipement4" class="equipement">
                     <option value="">-- 4TH SLOT --</option>
                     <?php echo $options; ?>
                 </select>
@@ -139,13 +139,13 @@
 
             <div class="slotRow">
                 <!-- Item 5 -->
-                <select name="equipement1" class="equipement">
+                <select name="equipement5" class="equipement">
                     <option value="">-- 5TH SLOT --</option>
                     <?php echo $options; ?>
                 </select>
 
                 <!-- Item 6 -->
-                <select name="equipement1" class="equipement">
+                <select name="equipement6" class="equipement">
                     <option value="">-- 6TH SLOT --</option>
                     <?php echo $options; ?>
                 </select>
@@ -155,8 +155,10 @@
             <button type="submit" id="sendFGT">SEND</button>
                         
         </form>
+
         <?php include 'src/View/layout/footer.php';?>
+    
     </main>
     
-
+    
 
